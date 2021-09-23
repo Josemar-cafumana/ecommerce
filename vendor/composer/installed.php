@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'f7f38929c466e4cc7645c529940b7f74a79085fe',
+        'reference' => '986a962495a2519f087b87b0670a68289a757399',
         'name' => 'hcodebr/ecommerce',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'f7f38929c466e4cc7645c529940b7f74a79085fe',
+            'reference' => '986a962495a2519f087b87b0670a68289a757399',
             'dev_requirement' => false,
         ),
         'phpmailer/phpmailer' => array(
