@@ -36,7 +36,9 @@ public static function login($login,  $password){
         $user->setData($data);
 
        $_SESSION[User::SESSION] = $user->getValues();
+       
 
+      
        return $user;
 
   }else{

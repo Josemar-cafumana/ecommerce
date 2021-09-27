@@ -42,15 +42,13 @@ class Model
 
 
     }
-    public function getValues($data = array() ){
+    public function getValues( ){
 
 
-        foreach ($data as $key => $value) {
             
            return $this->values;
            
-        }
-
+    
 
     }
 

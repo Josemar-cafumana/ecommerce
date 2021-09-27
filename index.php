@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+ob_start();
 
 session_start();
 
@@ -25,7 +27,7 @@ $app->get('/', function() {
 
 $app->get('/admin', function() {
  
-
+	
 	User::verifyLogin();
 
 
@@ -54,14 +56,16 @@ $app->get('/admin/login', function() {
 $app->post('/admin/login', function() {
  
 
-User::login($_POST['login'],$_POST["password"]);
+	User::login($_POST['login'],$_POST["password"]);
 
-header("Location: /admin");
-exit;
+	header("Location: http://www.sejexpress.com/admin");
+	exit;
 
 
 });
 
+
+ob_end_flush();
 $app->run();
 
  ?>
