@@ -63,6 +63,13 @@ public static function verifyLogin($inadmin = true){
     }
 }
 
+public static function logout(){
+
+  unset($_SESSION[User::SESSION]);
+  header("Location: /admin/login");
+  exit;
+}
+
 
 
 }

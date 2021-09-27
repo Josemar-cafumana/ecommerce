@@ -52,6 +52,16 @@ $app->get('/admin/login', function() {
 
 });
 
+$app->get('/admin/logout', function() {
+ 
+
+	User::logout();
+
+	
+
+
+});
+
 
 $app->post('/admin/login', function() {
  
