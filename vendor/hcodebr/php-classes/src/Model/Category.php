@@ -1,24 +1,23 @@
-<?php
+<?php 
 
 namespace Hcode\Model;
-use Hcode\DB\Sql;
+
+use \Hcode\DB\Sql;
 use \Hcode\Model;
+use \Hcode\Mailer;
 
+class Category extends Model {
 
-class Category extends Model
-{
+	public static function listAll()
+	{
 
+		$sql = new Sql();
 
-   
+		return $sql->select("SELECT * FROM tb_categories ORDER BY descategory");
 
-public static function listAll(){
+	}
 
-  $sql = new Sql();
-
-  return $sql->select("SELECT * FROM tb_categories  ");
-}
-
-public function save()
+	public function save()
 	{
 
 		$sql = new Sql();
@@ -34,7 +33,7 @@ public function save()
 
 	}
 
-    public function get($idcategory)
+	public function get($idcategory)
 	{
 
 		$sql = new Sql();
@@ -44,8 +43,6 @@ public function save()
 		]);
 
 		$this->setData($results[0]);
-
-		
 
 	}
 
@@ -61,8 +58,8 @@ public function save()
 		Category::updateFile();
 
 	}
-    
-    public static function updateFile()
+
+	public static function updateFile()
 	{
 
 		$categories = Category::listAll();
@@ -76,7 +73,6 @@ public function save()
 		file_put_contents($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "views" . DIRECTORY_SEPARATOR . "categories-menu.html", implode('', $html));
 
 	}
-
 
 	public function getProducts($related = true)
 	{
@@ -113,7 +109,7 @@ public function save()
 
 	}
 
-	public function getProductsPage($page = 1, $itemsPerPage = 3)
+	public function getProductsPage($page = 1, $itemsPerPage = 8)
 	{
 
 		$start = ($page - 1) * $itemsPerPage;
@@ -165,7 +161,6 @@ public function save()
 
 	}
 			
-	// ------------------------------------------
 	public static function getPage($page = 1, $itemsPerPage = 10)
 	{
 
@@ -217,13 +212,6 @@ public function save()
 
 	}
 
-	
-	
-	
-
-
-
-
-
-
 }
+
+ ?>
